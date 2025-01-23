@@ -1,10 +1,14 @@
 import './App.css'
-import { Blog } from './pages/blog'
+import { PostsProvider } from './context/postsContext'
+import { Blog } from './pages/Blog'
 
 function App() {
   return (
     <>
-      <Blog></Blog>
+    <PostsProvider>
+      <Blog/>
+    </PostsProvider>
+      
     </>
   )
 }

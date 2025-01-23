@@ -1,32 +1,24 @@
 import { Post } from "../components/Post"
-import { postsProviders } from "../providers/apiProvier"
+
 import ImgDec from "../assets/img-effect.png"
 import React, { useState } from "react";
 import { CreatePost } from "../components/CreatePost";
+import { usePosts } from "../context/postsContext";
 
 export function Blog() {
-
     const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    const { posts, addPost } = usePosts(); // Acesso ao contexto
+    // Verificar se posts é um array válido
+    if (!posts) {
+      return <div>Carregando...</div>; // Exibe algo enquanto os posts não estão disponíveis
+    }
+  
     return (<>
-    {isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
-                        {/* Botão para fechar o modal */}
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-2 right-2 text-blue-500"
-                        >
-                            <i className="fas fa-times"></i>
-                        </button>
-                        
-                        {/* Componente CreatePost */}
-                        <CreatePost />
-                    </div>
-                </div>
-            )}
+        <CreatePost
+            isOpen={isModalOpen}
+            addPost={ addPost }
+            onClose={() => setIsModalOpen(false)}
+        />
         <header>
             <div className="header-logo">Web<span>Blog</span></div>
             <div className="header-rights">powered by WebII</div>
@@ -35,7 +27,7 @@ export function Blog() {
 
         <div className="container">
             <main>
-                { postsProviders().map(
+                { posts.map(
                     ({autor, title, text, posText}, index) => <Post autor={autor} title={title} text={text} posText={posText} key={index}></Post>
                 )}
             </main>
@@ -47,7 +39,7 @@ export function Blog() {
                     Crie agora um post e compartilhe com o seu conteúdo.
                 </div>
                 <button
-                 onClick={openModal}
+                 onClick={() => setIsModalOpen(true)}
                 className="bg-blue-500 text-white p-2 rounded"
                 >Criar post</button>
                 <img alt="Imagem de decoração" src={ImgDec} />
