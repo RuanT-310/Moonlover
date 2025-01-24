@@ -1,6 +1,6 @@
 # R-W-A-Blog
 
-Neste Repositorio iremos mostrar os detalhes do Blog RWA-Blog. Nesta Quinta-feira [23/01/2025] foi apresentado uma atividade na materia de Web ii, ministrada pelo professor Warley da UNIFESSPA a turma de SI-2022. Tal atividade visava a aplicação de conhecimentos misnistrados em aula para a concepção de uma página de post, popularmente chamada de blog. Para a concepção da atividade foi proposto a formação de trios de alunos para o desenvolvimento da aplicação. Alunos responsáveis pela aplicação representada neste repositório são respectivamente Ruan, Wesley e Alexandre. No decorrer deste repositorio será mostrado o objetivos que o trio de alunos tiveram contato durante o desenvolvimento da atividade.
+Neste Repositorio iremos mostrar os detalhes do Blog RWA-Blog. Nesta Quinta-feira [23/01/2025] foi apresentado uma atividade na materia de Web ii, ministrada pelo professor Warley da UNIFESSPA a turma de SI-2022. Tal atividade visava a aplicação de conhecimentos misnistrados em aula para a concepção de uma página de post, popularmente chamada de blog. Para a concepção da atividade foi proposto a formação de trios de alunos para o desenvolvimento da aplicação. Alunos responsáveis pela aplicação representada neste repositório são respectivamente Ruan, Wesley e Alexandre. No decorrer deste repositorio será mostrado o objetivos que o trio de alunos alcançaram durante o desenvolvimento da atividade.
 
 ### Alunos
 - Ruan Vieira
