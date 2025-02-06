@@ -28,3 +28,4 @@ A pagina utiliza do PostContext para a obtenção das postagem, em formato de li
 - [Documentação do Vite](https://vite.dev)
 - [Documentação do React](https://react.dev)
 - [Documentação do tailwind](https://tailwindcss.com)
+
