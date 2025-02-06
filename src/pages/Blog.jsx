@@ -3,6 +3,7 @@ import { Post } from "../components/Post"
 import ImgDec from "../assets/img-effect.png"
 import React, { useState } from "react";
 import { CreatePost } from "../components/CreatePost";
+import { CreatePostModal } from "../components/CreatePostModal";
 import { usePosts } from "../context/postsContext";
 
 export function Blog() {
@@ -14,7 +15,7 @@ export function Blog() {
     }
   
     return (<>
-        <CreatePost
+        <CreatePostModal
             isOpen={isModalOpen}
             addPost={ addPost }
             onClose={() => setIsModalOpen(false)}
