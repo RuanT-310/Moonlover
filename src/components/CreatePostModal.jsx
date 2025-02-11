@@ -32,16 +32,6 @@ export const CreatePostModal = ({ isOpen, onClose, addPost }) => {
 
       {/* Formulário */}
       <form onSubmit={handleSubmit(submitFormPost)}>
-        {/* Campo Nome */}
-          <Input
-            rules={{required: true, minLength: 3, maxLength: 20, pattern: /^[a-z A-Z]+$/}}
-            className="mb-4 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-gray-400"
-            type="text"
-            name="name"
-            control={control}
-            placeholder="Digite o seu nome"
-          />
-        {/* Campo Título */}
         <div className="mb-4">
           <Input
             rules={{required: true, minLength: 3, maxLength: 20}}

@@ -21,8 +21,8 @@ export function Blog() {
         <div className="container">
             <main>
                 { posts.map(
-                    ({autor, title, text, posText}, index) => <Post autor={autor} title={title} text={text} posText={posText} key={index}></Post>
-                )}
+                    ({title, text}, index) => <Post title={title} text={text} key={index}/>)
+                }
             </main>
             <CreatePost modalControler={() => setIsModalOpen(true)}/>
         </div>
