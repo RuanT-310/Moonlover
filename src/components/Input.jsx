@@ -1,23 +1,17 @@
 import { useController, useForm } from "react-hook-form"
 
-export const Input = (props) => {
-    const {
-        register, 
-        handleSubmit, 
-        formState: { errors } 
-    } = useForm()
-
-    const { field, fieldState } = useController(props)
+export const Input = ({ name, control, rules, className, placeholder }) => {
+    const { field, fieldState } = useController({ name, control, rules })
 
     return <>
         <input
             {...field}
-            placeholder={props.name}
-            className={props.className}
+            placeholder={placeholder}
+            className={className}
         />
-        {fieldState.error?.type == "required" && <p>Campo Obrigatorio</p>}
-        {fieldState.error?.type == "min" && <p>Valor Minimo exigido</p>}
-        {fieldState.error?.type == "max" && <p>Valor Minimo ultrapassado</p>}
+        {fieldState.error?.type === "required" && <p>Campo Obrigatório</p>}
+        {fieldState.error?.type === "minLength" && <p>Valor mínimo exigido</p>}
+        {fieldState.error?.type === "maxLength" && <p>Valor máximo ultrapassado</p>}
     </>
  
 } 
