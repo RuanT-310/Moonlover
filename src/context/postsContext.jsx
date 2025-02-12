@@ -1,32 +1,30 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { SupabasePostRepository } from '../providers/supabasePostRepository';
 
-// Dados iniciais dos posts
-const initialPosts = [
-  {
-    autor: { img: "assets/icone.png", name: "Randall Pearson" },
-    title: "Título bem grandão do post pra colocar aqui, talvez quebrando linha.",
-    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página...",
-    posText: "A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras..."
-  },
-  {
-    autor: { img: "assets/icone.png", name: "Randall Pearson" },
-    title: "Título bem grandão do post pra colocar aqui, talvez quebrando linha.",
-    text: "É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página...",
-    posText: "A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras..."
-  }
-];
+const postRepository = new SupabasePostRepository()
 
 // Criar o contexto
 const PostsContext = createContext();
 
 // Provedor de contexto para envolver os componentes e fornecer os dados
 export const PostsProvider = ({ children }) => {
-  const [posts, setPosts] = useState(initialPosts); // Estado para armazenar os posts
+  const [posts, setPosts] = useState(); // Estado para armazenar os posts
 
   // Função para adicionar um novo post
-  const addPost = (newPost) => {
-    setPosts((prevPosts) => [...prevPosts, newPost]);
+  
+  useEffect(() => {
+    (async () => {
+      const posts = await postRepository.findAll();
+      setPosts(posts);
+      } )()
+  }, [])
+      
+  const addPost = async (newPost) => {
+    await postRepository.create(newPost)
+    const posts = await postRepository.findAll(); 
+    setPosts(posts);
   };
+
 
   return (
     <PostsContext.Provider value={{ posts, addPost }}>
@@ -36,6 +34,4 @@ export const PostsProvider = ({ children }) => {
 };
 
 // Hook personalizado para consumir o contexto
-export const usePosts = () => {
-  return useContext(PostsContext);
-};
+export const usePosts = () => useContext(PostsContext);
