@@ -23,7 +23,9 @@ A pagina utiliza do PostContext para a obtenção das postagem, em formato de li
 - React
   - Componentes
   - Contextos
+  - Formularios
 - Tailwind
+- DB-Table
 # Referências
 - [Documentação do Vite](https://vite.dev)
 - [Documentação do React](https://react.dev)
