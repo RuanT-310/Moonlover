@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { Input } from './Input';
-import { TextArea } from './TextAreaForm';
 
 
 export const CreatePostModal = ({ isOpen, onClose, addPost }) => {

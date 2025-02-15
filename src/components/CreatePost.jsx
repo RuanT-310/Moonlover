@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import ImgDec from "../assets/img-effect.png"
-import { CreatePostModal } from "./CreatePostModal"
+import { CreatePostModal } from "./Forms/PostForm"
 import { usePosts } from "../context/postsContext"
 
 export const CreatePost = () => {
