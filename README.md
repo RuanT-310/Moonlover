@@ -1,7 +1,7 @@
 # Formulario Quebrado
 
-Neste Repositorio irei um formulario em duas etapas.
-
+Neste Repositorio irei um formulario em duas etapas. Usando o hook forms.
+Os componentes do fomularios podem ser encontrados na pasta (Forms)[https://github.com/RuanT-310/R-W-Blog/tree/breck-form/src/components/Forms] dentro de componentes
 
 ### Aluno
 - Ruan Vieira
